@@ -16,8 +16,10 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->timestamp('deadline');
-            $table->foreignIdFor(\App\Models\User::class,'assigned_user')->constrained();
-            $table->foreignIdFor(\App\Models\Client::class,'assigned_client')->constrained();
+            // $table->foreignIdFor(\App\Models\User::class,'assigned_user')->constrained();
+            // $table->foreignIdFor(\App\Models\Client::class,'assigned_client')->constrained();
+            $table->foreignIdFor(\App\Models\User::class,'assigned_user');
+            $table->foreignIdFor(\App\Models\Client::class,'assigned_client');
             $table->string('status')->default('open');
             $table->softDeletes();
             $table->timestamps();
